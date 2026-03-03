@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GEO 售前诊断报告</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,500;10..48,700;10..48,800&amp;family=IBM+Plex+Mono:wght@500&amp;family=Noto+Sans+SC:wght@400;500;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="grain-layer"></div>
+
+    <main class="page">
+      <header class="hero panel">
+        <div class="hero-grid">
+          <div class="page-header">
+            <p class="hero-section-label">报告信息 / SCOPE</p>
+            <div class="hero-question-pills" id="heroQuestions"></div>
+            <div class="page-header-title-wrap">
+              <p class="eyebrow">Geo Pre-Sale Intelligence</p>
+              <h1 id="reportTitle">GEO 售前诊断报告</h1>
+              <p id="reportSubtitle" class="subtitle"></p>
+            </div>
+            <div class="header-meta" id="reportMeta"></div>
+            <div class="hero-locales" id="heroLocales"></div>
+          </div>
+
+          <div class="hero-info-stack">
+            <p class="hero-section-label">结论与能力 / INSIGHT</p>
+            <div class="hero-signal">
+              <p class="hero-signal-label">10秒结论</p>
+              <p class="hero-signal-text" id="heroSignal"></p>
+            </div>
+            <div class="hero-coverage" id="heroCoverage"></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="report-layout">
+        <aside class="report-nav panel" id="reportNav"></aside>
+
+        <div class="report-content">
+          <section id="brandOverview" class="panel"></section>
+          <section id="brandCompetition" class="panel"></section>
+          <section id="topicIntents" class="panel"></section>
+          <section id="queryExpansion" class="panel"></section>
+          <section id="platformDiff" class="panel"></section>
+          <section id="sentimentAnalysis" class="panel"></section>
+          <section id="opportunitiesSummary" class="panel"></section>
+          <section id="subscriptionCta" class="panel"></section>
+        </div>
+      </div>
+
+      <footer class="report-footer">
+        <p>GEO Pre-sale Diagnostic Framework · Version 1.0</p>
+        <p>结构化模板 + 数据驱动渲染 + 多图表联动视图</p>
+      </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
