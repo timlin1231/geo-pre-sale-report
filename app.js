@@ -225,6 +225,11 @@
             "但在 {{weakDimensions}} 等关键维度上，你仍落后于 {{mainCompetitors}}，这些短板会影响 AI 是否优先推荐你。",
         },
       },
+      competition_trend: {
+        title: "动态竞争格局趋势（02-B）——你在追上，还是被甩开？",
+        description:
+          "该报告时间范围在生成前已确定。本模块按固定时间窗展示 Trip.com 与竞品在核心 GEO 指标上的阶段变化与当前差值。",
+      },
       topic_intents: {
         title: "意图与主题场景——在哪些“买单场景”里你掉线了？",
         introText:
@@ -274,6 +279,12 @@
         transitionText:
           "平台的表现差异 + 情绪结构的偏差，最终都会体现在「你在哪些场景被优先推荐」上。下一步，我们会把这些发现压缩成「机会优先级矩阵」，帮你判断先做哪几块能最快带来 AI 流量与转化提升。",
       },
+      sentiment_trend: {
+        title: "情绪与口碑趋势（06-B）——口碑在稳定向好，还是有波动风险？",
+        description:
+          "用时间维度监控正/中/负面占比与情绪得分变化，识别潜在负面波峰与业务预警节点。",
+        lockHint: "订阅后解锁 30/90 天情绪趋势及关键节点分析。",
+      },
       opportunities_summary: {
         title: "大总结：问题与机会——下一步应该做什么？",
         description:
@@ -282,6 +293,11 @@
         matrixAxisHint:
           "X 轴：影响力（越靠右，对可见度 / 转化提升越大）｜Y 轴：实施难度（越靠上，投入资源越多）。右下象限 = 高影响 × 低难度 = 当前最优先机会。",
         cardsTitle: "机会卡片 Top 5",
+        trendTitle: "机会趋势（07-B）——机会在被吃掉，还是继续漏损？",
+        trendHint: "订阅后按天追踪各 Topic 的机会流失波动与竞品挤占趋势。",
+        trendChartTitle: "TOP 场景机会流失趋势",
+        trendMiniTitle: "TOP 场景流失推荐趋势（最近 4 周）",
+        trendConclusionTitle: "自动结论（付费解锁）",
         supportTitle: "执行支撑层",
       },
       subscription_cta: {
@@ -293,6 +309,7 @@
   };
 
   const reportData = {
+    accessMode: "presale",
     reportMeta: {
       brandName: "Trip.com 携程",
       productName: "Trip.com",
@@ -805,6 +822,79 @@
         ChatGPT: 40,
       },
     },
+    competitionTrend: {
+      dates: [
+        "2025-12-08",
+        "2025-12-15",
+        "2025-12-22",
+        "2025-12-29",
+        "2026-01-05",
+        "2026-01-12",
+        "2026-01-19",
+        "2026-01-26",
+        "2026-02-02",
+        "2026-02-09",
+        "2026-02-16",
+        "2026-02-23",
+        "2026-03-02",
+      ],
+      platforms: ["all", "ChatGPT", "Gemini", "Perplexity"],
+      brands: ["Trip.com", "Booking.com", "Expedia", "Airbnb"],
+      metrics: {
+        visibility: {
+          all: {
+            "Trip.com": [3.8, 3.9, 4.0, 4.0, 4.1, 4.2, 4.4, 4.5, 4.7, 4.8, 4.9, 5.0, 5.2],
+            "Booking.com": [26.2, 26.0, 25.7, 25.6, 25.4, 25.3, 25.1, 25.0, 24.8, 24.8, 24.7, 24.6, 24.5],
+            Expedia: [21.8, 21.7, 21.6, 21.4, 21.3, 21.2, 21.0, 20.9, 20.7, 20.6, 20.5, 20.3, 20.1],
+            Airbnb: [9.6, 9.5, 9.4, 9.3, 9.2, 9.1, 9.0, 8.9, 8.9, 8.8, 8.7, 8.6, 8.5],
+          },
+          ChatGPT: {
+            "Trip.com": [5.2, 5.3, 5.4, 5.4, 5.6, 5.7, 5.9, 6.1, 6.3, 6.6, 6.8, 7.1, 7.3],
+            "Booking.com": [31.0, 30.8, 30.6, 30.4, 30.2, 30.0, 29.7, 29.5, 29.2, 29.0, 28.8, 28.6, 28.4],
+            Expedia: [23.5, 23.3, 23.2, 23.0, 22.8, 22.7, 22.5, 22.3, 22.1, 21.9, 21.7, 21.6, 21.4],
+            Airbnb: [10.7, 10.6, 10.4, 10.3, 10.2, 10.1, 9.9, 9.8, 9.7, 9.6, 9.5, 9.4, 9.2],
+          },
+          Gemini: {
+            "Trip.com": [3.1, 3.2, 3.2, 3.3, 3.4, 3.4, 3.5, 3.6, 3.8, 3.9, 4.0, 4.1, 4.2],
+            "Booking.com": [20.4, 20.2, 20.1, 20.0, 19.8, 19.7, 19.5, 19.4, 19.3, 19.2, 19.1, 19.0, 18.8],
+            Expedia: [19.5, 19.4, 19.3, 19.2, 19.0, 18.9, 18.8, 18.7, 18.5, 18.4, 18.3, 18.2, 18.0],
+            Airbnb: [8.5, 8.5, 8.4, 8.3, 8.2, 8.1, 8.1, 8.0, 7.9, 7.8, 7.8, 7.7, 7.6],
+          },
+          Perplexity: {
+            "Trip.com": [4.4, 4.4, 4.5, 4.6, 4.8, 4.9, 5.1, 5.3, 5.5, 5.7, 5.9, 6.1, 6.4],
+            "Booking.com": [24.1, 24.0, 23.9, 23.8, 23.6, 23.5, 23.4, 23.2, 23.1, 22.9, 22.8, 22.6, 22.4],
+            Expedia: [22.0, 21.9, 21.8, 21.7, 21.6, 21.4, 21.3, 21.2, 21.0, 20.9, 20.8, 20.7, 20.6],
+            Airbnb: [8.8, 8.8, 8.7, 8.6, 8.6, 8.5, 8.4, 8.3, 8.2, 8.2, 8.1, 8.0, 7.9],
+          },
+        },
+        citation: {
+          all: {
+            "Trip.com": [0.3, 0.3, 0.3, 0.4, 0.4, 0.4, 0.5, 0.5, 0.5, 0.6, 0.6, 0.7, 0.8],
+            "Booking.com": [3.8, 3.8, 3.7, 3.7, 3.6, 3.6, 3.5, 3.5, 3.4, 3.4, 3.3, 3.2, 3.1],
+            Expedia: [7.9, 7.8, 7.7, 7.7, 7.6, 7.5, 7.4, 7.4, 7.3, 7.2, 7.2, 7.1, 7.0],
+            Airbnb: [0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+          },
+          ChatGPT: {
+            "Trip.com": [0.5, 0.5, 0.5, 0.6, 0.6, 0.7, 0.7, 0.8, 0.8, 0.9, 0.9, 1.0, 1.1],
+            "Booking.com": [4.1, 4.0, 4.0, 3.9, 3.9, 3.8, 3.8, 3.7, 3.7, 3.6, 3.5, 3.4, 3.4],
+            Expedia: [8.1, 8.1, 8.0, 7.9, 7.9, 7.8, 7.7, 7.7, 7.6, 7.5, 7.4, 7.3, 7.2],
+            Airbnb: [0.3, 0.3, 0.3, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.1, 0.1],
+          },
+          Gemini: {
+            "Trip.com": [0.2, 0.2, 0.3, 0.3, 0.3, 0.3, 0.4, 0.4, 0.4, 0.4, 0.5, 0.5, 0.6],
+            "Booking.com": [3.0, 3.0, 3.0, 2.9, 2.9, 2.9, 2.8, 2.8, 2.8, 2.7, 2.7, 2.6, 2.6],
+            Expedia: [6.8, 6.7, 6.7, 6.6, 6.6, 6.5, 6.5, 6.4, 6.4, 6.3, 6.3, 6.2, 6.1],
+            Airbnb: [0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+          },
+          Perplexity: {
+            "Trip.com": [0.4, 0.4, 0.4, 0.5, 0.5, 0.5, 0.6, 0.6, 0.7, 0.7, 0.8, 0.8, 0.9],
+            "Booking.com": [3.6, 3.6, 3.5, 3.5, 3.4, 3.4, 3.3, 3.3, 3.2, 3.2, 3.1, 3.1, 3.0],
+            Expedia: [7.4, 7.3, 7.3, 7.2, 7.2, 7.1, 7.1, 7.0, 7.0, 6.9, 6.9, 6.8, 6.7],
+            Airbnb: [0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.2, 0.1, 0.1, 0.1],
+          },
+        },
+      },
+    },
     sentiment: {
       positive: 68,
       neutral: 24,
@@ -835,6 +925,27 @@
         { word: "退改提醒", weight: 0.6, share: 9, exampleScene: "订单变更通知体验" },
         { word: "商务审批", weight: 0.56, share: 8, exampleScene: "差旅审批链路对接" },
       ],
+    },
+    sentimentTrend: {
+      dates: [
+        "2025-12-08",
+        "2025-12-15",
+        "2025-12-22",
+        "2025-12-29",
+        "2026-01-05",
+        "2026-01-12",
+        "2026-01-19",
+        "2026-01-26",
+        "2026-02-02",
+        "2026-02-09",
+        "2026-02-16",
+        "2026-02-23",
+        "2026-03-02",
+      ],
+      positiveRate: [57, 58, 59, 60, 61, 62, 63, 63, 64, 65, 66, 67, 68],
+      neutralRate: [29, 28, 28, 27, 27, 26, 25, 25, 24, 24, 24, 24, 24],
+      negativeRate: [14, 14, 13, 13, 12, 12, 12, 12, 12, 11, 10, 9, 8],
+      overallScore: [60.2, 60.9, 61.4, 62.0, 62.4, 63.1, 63.8, 64.0, 64.6, 65.2, 65.8, 66.1, 66.5],
     },
     opportunities: {
       matrix: {
@@ -957,6 +1068,50 @@
         },
       ],
     },
+    opportunityTrend: {
+      weeks: [
+        "2026-02-23",
+        "2026-02-24",
+        "2026-02-25",
+        "2026-02-26",
+        "2026-02-27",
+        "2026-02-28",
+        "2026-03-01",
+        "2026-03-02",
+      ],
+      scenarios: [
+        {
+          scenarioId: "scene_1",
+          scenarioName: "booking flights & stays",
+          opportunityScore: [92, 90, 89, 88, 87, 85, 83, 82],
+          estimatedLoss: [2280, 2240, 2190, 2130, 2080, 2010, 1960, 1900],
+        },
+        {
+          scenarioId: "scene_2",
+          scenarioName: "business trip booking",
+          opportunityScore: [84, 84, 85, 85, 86, 86, 87, 87],
+          estimatedLoss: [820, 840, 860, 890, 900, 920, 930, 940],
+        },
+        {
+          scenarioId: "scene_3",
+          scenarioName: "manage hotel reservations",
+          opportunityScore: [79, 80, 80, 81, 82, 83, 83, 84],
+          estimatedLoss: [760, 780, 790, 805, 820, 830, 835, 840],
+        },
+        {
+          scenarioId: "scene_4",
+          scenarioName: "track travel prices",
+          opportunityScore: [72, 72, 71, 71, 71, 70, 70, 70],
+          estimatedLoss: [700, 690, 675, 660, 650, 640, 630, 620],
+        },
+        {
+          scenarioId: "scene_5",
+          scenarioName: "vacation packages",
+          opportunityScore: [69, 68, 68, 67, 66, 66, 65, 64],
+          estimatedLoss: [640, 630, 620, 600, 585, 570, 555, 540],
+        },
+      ],
+    },
     premiumGuide: {
       title: "可选增值：AI 流量归因",
       body:
@@ -1048,6 +1203,7 @@
   const sectionNavItems = [
     { key: "brandOverview", number: "01", label: "品牌数据概览" },
     { key: "brandCompetition", number: "02", label: "品牌竞争位置" },
+    { key: "competitionTrend", number: "02-B", label: "动态竞争格局趋势" },
     { key: "topicIntents", number: "03", label: "意图与主题场景" },
     { key: "queryExpansion", number: "04", label: "提示词扩展查询" },
     { key: "platformDiff", number: "05", label: "平台差异分析" },
@@ -1209,6 +1365,30 @@
       .replaceAll(">", "&gt;")
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#39;");
+  }
+
+  function isPaidVersion() {
+    return reportData.accessMode === "paid";
+  }
+
+  function toPercentPoint(value) {
+    const parsed = number(value) || 0;
+    return parsed <= 1 ? parsed * 100 : parsed;
+  }
+
+  function calcWindowStart(total, range) {
+    const pointsByRange = { 7: 2, 30: 5, 90: total };
+    const points = pointsByRange[range] || pointsByRange[90];
+    return Math.max(total - points, 0);
+  }
+
+  function trendChangeRate(startValue, endValue) {
+    const start = number(startValue) || 0;
+    const end = number(endValue) || 0;
+    if (Math.abs(start) < 0.0001) {
+      return 0;
+    }
+    return ((end - start) / Math.abs(start)) * 100;
   }
 
   function applyPainStyle(text) {
@@ -1673,7 +1853,6 @@
             : statusInfo.status === "disadvantage"
               ? `落后 ${gapText} | 竞品平均：${formatMetricWithUnit(card.metricKey, benchmark)}`
               : `基本持平 | 竞品平均：${formatMetricWithUnit(card.metricKey, benchmark)}`;
-        const businessText = interpolate(card.explanations.primary, context);
         const neutralLine = "【状态观察】当前与竞品差距有限，建议继续围绕高价值场景提升优势。";
         const calloutRaw =
           statusInfo.status === "advantage"
@@ -1723,7 +1902,6 @@
               </div>
             </div>
             <p class="metric-desc"><strong>定义：</strong>${card.leftDescription}</p>
-            <p class="metric-business-line">${businessText}</p>
             <p class="metric-callout-line ${calloutTone}">${calloutText}</p>
           </article>
         `;
@@ -2041,6 +2219,548 @@
     return "low";
   }
 
+  function renderCompetitionTrend() {
+    const section = reportPrd.sections.competition_trend;
+    const container = document.getElementById("competitionTrend");
+    if (!container) {
+      return;
+    }
+    const paid = isPaidVersion();
+    const windowDays = 30;
+    const brands = ["Booking.com", "Expedia", "Airbnb", "Agoda", "Trip.com"];
+    const metricList = [
+      { key: "visibility", label: "可见度", format: "percent", higherIsBetter: true },
+      { key: "aiMentionRate", label: "AI 提及率", format: "percent", higherIsBetter: true },
+      { key: "citationRate", label: "引用率", format: "percent", higherIsBetter: true },
+      { key: "shareOfVoice", label: "声量份额", format: "percent", higherIsBetter: true },
+      { key: "avgRank", label: "平均排名", format: "rank", higherIsBetter: false },
+      { key: "sentimentScore", label: "情感倾向得分", format: "score", higherIsBetter: true },
+    ];
+    const state = {
+      metric: metricList[0].key,
+      showCurrent: true,
+      showPrevious: paid,
+      compareOn: true,
+    };
+
+    const seed = {
+      visibility: {
+        "Trip.com": { start: 3.3, end: 4.9, wobble: 0.09 },
+        "Booking.com": { start: 52.0, end: 48.8, wobble: 0.03 },
+        Expedia: { start: 46.6, end: 44.3, wobble: 0.03 },
+        Airbnb: { start: 10.2, end: 9.0, wobble: 0.05 },
+        Agoda: { start: 8.6, end: 7.6, wobble: 0.05 },
+      },
+      aiMentionRate: {
+        "Trip.com": { start: 3.1, end: 4.6, wobble: 0.1 },
+        "Booking.com": { start: 48.5, end: 45.1, wobble: 0.03 },
+        Expedia: { start: 42.4, end: 39.9, wobble: 0.03 },
+        Airbnb: { start: 9.8, end: 9.0, wobble: 0.05 },
+        Agoda: { start: 8.1, end: 6.7, wobble: 0.05 },
+      },
+      citationRate: {
+        "Trip.com": { start: 0.2, end: 0.5, wobble: 0.18 },
+        "Booking.com": { start: 4.2, end: 3.6, wobble: 0.08 },
+        Expedia: { start: 8.4, end: 7.6, wobble: 0.06 },
+        Airbnb: { start: 0.4, end: 0.0, wobble: 0.2 },
+        Agoda: { start: 0.8, end: 0.4, wobble: 0.09 },
+      },
+      shareOfVoice: {
+        "Trip.com": { start: 2.1, end: 3.1, wobble: 0.08 },
+        "Booking.com": { start: 55.0, end: 51.2, wobble: 0.03 },
+        Expedia: { start: 37.2, end: 34.5, wobble: 0.04 },
+        Airbnb: { start: 7.1, end: 6.3, wobble: 0.05 },
+        Agoda: { start: 5.1, end: 4.5, wobble: 0.05 },
+      },
+      avgRank: {
+        "Trip.com": { start: 5.8, end: 5.2, wobble: 0.06 },
+        "Booking.com": { start: 3.6, end: 3.3, wobble: 0.03 },
+        Expedia: { start: 4.0, end: 3.7, wobble: 0.03 },
+        Airbnb: { start: 6.8, end: 6.3, wobble: 0.04 },
+        Agoda: { start: 5.9, end: 5.4, wobble: 0.04 },
+      },
+      sentimentScore: {
+        "Trip.com": { start: 61.8, end: 66.5, wobble: 0.04 },
+        "Booking.com": { start: 73.2, end: 75.6, wobble: 0.02 },
+        Expedia: { start: 70.4, end: 71.9, wobble: 0.02 },
+        Airbnb: { start: 75.0, end: 77.0, wobble: 0.02 },
+        Agoda: { start: 66.1, end: 67.8, wobble: 0.03 },
+      },
+    };
+
+    const now = new Date("2026-03-02T00:00:00");
+    const dates = Array.from({ length: windowDays }, (_, idx) => {
+      const d = new Date(now);
+      d.setDate(d.getDate() - (windowDays - 1 - idx));
+      const month = `${d.getMonth() + 1}`.padStart(2, "0");
+      const day = `${d.getDate()}`.padStart(2, "0");
+      return `${month}-${day}`;
+    });
+
+    const buildSeries = (start, end, len, wobbleFactor = 0.05) =>
+      Array.from({ length: len }, (_, idx) => {
+        const progress = len === 1 ? 1 : idx / (len - 1);
+        const baseline = start + (end - start) * progress;
+        const wave = Math.sin((idx + 1) * 0.75) * (Math.abs(end - start) + Math.abs(end || 1)) * wobbleFactor * 0.22;
+        return Number((baseline + wave).toFixed(2));
+      });
+
+    const trendSeries = {};
+    metricList.forEach((metric) => {
+      trendSeries[metric.key] = {};
+      brands.forEach((brand) => {
+        const cfg = seed?.[metric.key]?.[brand] || { start: 0, end: 0, wobble: 0.05 };
+        const values = buildSeries(cfg.start, cfg.end, windowDays, cfg.wobble);
+        values[values.length - 1] = Number(cfg.end.toFixed(2));
+        trendSeries[metric.key][brand] = values;
+      });
+    });
+
+    const brandMeta = {
+      "Booking.com": { short: "B", cls: "booking" },
+      Expedia: { short: "E", cls: "expedia" },
+      Airbnb: { short: "A", cls: "airbnb" },
+      Agoda: { short: "A", cls: "agoda" },
+      "Trip.com": { short: "T", cls: "trip" },
+    };
+
+    container.innerHTML = `
+      ${sectionHeader("competitionTrend", section.title)}
+      <div class="trend-toolbar">
+        <div class="trend-control-group">
+          <span class="trend-control-label">可选指标</span>
+          <div class="trend-chip-row" id="competitionMetricSwitch">
+            ${metricList
+              .map(
+                (metric, idx) => `
+                  <button type="button" class="trend-chip ${idx === 0 ? "active" : ""} ${!paid && idx > 0 ? "locked" : ""}" data-metric="${metric.key}" ${
+                  !paid && idx > 0 ? "disabled title=\"订阅后可解锁该指标趋势分析\"" : ""
+                }>
+                    ${metric.label}
+                  </button>
+                `
+              )
+              .join("")}
+          </div>
+        </div>
+        <div class="competition-trend-options">
+          <label class="competition-check">
+            <input type="checkbox" id="competitionCurrentToggle" checked ${paid ? "" : "disabled"} />
+            <span>当前</span>
+          </label>
+          <label class="competition-check">
+            <input type="checkbox" id="competitionPreviousToggle" ${paid ? "checked" : "disabled"} />
+            <span>上一周期</span>
+          </label>
+          <label class="competition-switch">
+            <input type="checkbox" id="competitionCompareToggle" checked ${paid ? "" : "disabled"} />
+            <span>对比</span>
+          </label>
+        </div>
+      </div>
+      <div class="competition-trend-layout">
+        <div class="chart-box ${paid ? "" : "locked-preview"}">
+          <h3 class="chart-title" id="competitionTrendChartTitle">趋势对比</h3>
+          <div class="competition-premium-inline">
+            <span class="competition-premium-tag">增值能力（可选）</span>
+            <span class="competition-premium-text">解锁完整周期波动、关键拐点与自动趋势解读</span>
+          </div>
+          ${
+            paid
+              ? ""
+              : `<div class="competition-preview-visual">
+                  <span></span><span></span><span></span>
+                </div>`
+          }
+          <div class="chart-canvas competition-trend-canvas" id="competitionTrendLine"></div>
+        </div>
+        <div class="competition-rank-card ${paid ? "" : "locked-preview"}">
+          <h3 class="competition-rank-title" id="competitionRankTitle">可见度排名</h3>
+          <div class="competition-premium-inline is-side">
+            <span class="competition-premium-tag">增值能力（可选）</span>
+            <span class="competition-premium-text">解锁跨周期榜单波动与异常提醒</span>
+          </div>
+          <div class="competition-table-wrap">
+            <table class="competition-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>品牌</th>
+                  <th id="competitionRankMetricLabel">可见度 ↑</th>
+                  <th>趋势 ↕</th>
+                </tr>
+              </thead>
+              <tbody id="competitionTrendTableBody"></tbody>
+            </table>
+          </div>
+          <button type="button" class="competition-more-btn">更多</button>
+          ${
+            paid
+              ? ""
+              : `<div class="competition-preview-side-visual" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </div>`
+          }
+        </div>
+      </div>
+      <div class="trend-conclusion-box" id="competitionTrendConclusion"></div>
+    `;
+
+    const metricSwitch = container.querySelector("#competitionMetricSwitch");
+    const tableBody = container.querySelector("#competitionTrendTableBody");
+    const conclusion = container.querySelector("#competitionTrendConclusion");
+    const chartTitle = container.querySelector("#competitionTrendChartTitle");
+    const rankTitle = container.querySelector("#competitionRankTitle");
+    const rankMetricLabel = container.querySelector("#competitionRankMetricLabel");
+    const currentToggle = container.querySelector("#competitionCurrentToggle");
+    const previousToggle = container.querySelector("#competitionPreviousToggle");
+    const compareToggle = container.querySelector("#competitionCompareToggle");
+    const trendChart = ensureChart("competitionTrendLine", {
+      xAxis: { type: "category", data: [] },
+      yAxis: { type: "value" },
+      series: [],
+    });
+
+    const renderTable = () => {
+      const metric = metricList.find((item) => item.key === state.metric) || metricList[0];
+      const seriesByBrand = trendSeries[metric.key] || {};
+      const currentIndex = dates.length - 1;
+      const prevIndex = Math.max(currentIndex - 1, 0);
+      const tripCurrent = number(seriesByBrand["Trip.com"]?.[currentIndex]) || 0;
+      const yAxisLabel =
+        metric.format === "percent" ? "{value}%" : metric.format === "rank" ? "{value} 名" : "{value}";
+      const splitIndex = Math.floor(dates.length / 2);
+      const xLabelStep = Math.max(1, Math.ceil(dates.length / 7));
+      const latestIndex = Math.max(dates.length - 1, 0);
+
+      if (trendChart) {
+        const visibleBrands = state.compareOn ? brands : ["Trip.com"];
+        const segmentData = (arr, mode) => {
+          if (!paid) {
+            if (mode === "previewHistory") {
+              return arr.map((val, idx) => (idx < latestIndex ? val : null));
+            }
+            return arr.map((val, idx) => (idx === latestIndex ? val : null));
+          }
+          return arr.map((val, idx) => {
+            if (mode === "current") {
+              return state.showCurrent && idx > splitIndex ? val : null;
+            }
+            return state.showPrevious && idx <= splitIndex ? val : null;
+          });
+        };
+
+        const trendOption = applyChartBase({
+            tooltip: !paid
+              ? {
+                  trigger: "axis",
+                  formatter: (params) => {
+                    const axis = params?.[0]?.axisValue;
+                    const pointIndex = params?.[0]?.dataIndex;
+                    if (pointIndex !== latestIndex) {
+                      return `日期：${axis}<br/>解锁订阅后可查看该日期的详细指标与竞品对比`;
+                    }
+                    const rows = (params || [])
+                      .filter((item) => item.seriesName && !String(item.seriesName).includes("历史预览"))
+                      .map((item) => {
+                        const v = item.data;
+                        if (v === null || v === undefined) return "";
+                        if (metric.format === "percent") return `${item.marker}${item.seriesName}：${Number(v).toFixed(1)}%`;
+                        if (metric.format === "rank") return `${item.marker}${item.seriesName}：${Number(v).toFixed(1)} 名`;
+                        return `${item.marker}${item.seriesName}：${Math.round(Number(v))} 分`;
+                      })
+                      .filter(Boolean);
+                    return [`日期：${axis}`, ...rows].join("<br/>");
+                  },
+                }
+              : {
+                  trigger: "axis",
+                  valueFormatter: (value) => {
+                    if (value === null || value === undefined) return "—";
+                    if (metric.format === "percent") return `${Number(value).toFixed(1)}%`;
+                    if (metric.format === "rank") return `${Number(value).toFixed(1)} 名`;
+                    return `${Math.round(Number(value))} 分`;
+                  },
+                },
+            legend: { show: false },
+            grid: { left: 54, right: 20, top: 48, bottom: 34 },
+            xAxis: {
+              type: "category",
+              data: dates,
+              axisLabel: {
+                interval: 0,
+                formatter: (value, idx) =>
+                  idx === 0 || idx === dates.length - 1 || idx % xLabelStep === 0
+                    ? value
+                    : "",
+              },
+            },
+            yAxis: {
+              type: "value",
+              axisLabel: { formatter: yAxisLabel },
+            },
+            series: !paid
+              ? visibleBrands.flatMap((brand) => {
+                  const raw = seriesByBrand[brand] || [];
+                  return [
+                    {
+                      name: `${brand} 历史预览`,
+                      type: "line",
+                      smooth: true,
+                      showSymbol: false,
+                      lineStyle: { width: 1.6, type: "dashed", color: "rgba(130,144,163,0.58)" },
+                      itemStyle: { color: "rgba(130,144,163,0.58)" },
+                      tooltip: { show: false },
+                      emphasis: { disabled: true },
+                      data: segmentData(raw, "previewHistory"),
+                    },
+                    {
+                      name: brand,
+                      type: "line",
+                      smooth: true,
+                      symbol: "circle",
+                      symbolSize: brand === "Trip.com" ? 8 : 6,
+                      lineStyle: { width: 0, opacity: 0 },
+                      itemStyle: { opacity: 1 },
+                      data: segmentData(raw, "current"),
+                      markArea:
+                        latestIndex > 0
+                          ? {
+                              silent: true,
+                              itemStyle: { color: "rgba(138, 152, 172, 0.2)" },
+                              data: [[{ xAxis: dates[0] }, { xAxis: dates[latestIndex - 1] }]],
+                            }
+                          : undefined,
+                    },
+                  ];
+                })
+              : visibleBrands.flatMap((brand) => {
+                  const raw = seriesByBrand[brand] || [];
+                  const currentData = segmentData(raw, "current");
+                  const previousData = segmentData(raw, "previous");
+                  return [
+                    {
+                      name: brand,
+                      type: "line",
+                      smooth: true,
+                      symbol: "circle",
+                      symbolSize: brand === "Trip.com" ? 7 : 5,
+                      lineStyle: {
+                        width: brand === "Trip.com" ? 3.2 : 2,
+                        opacity: brand === "Trip.com" ? 1 : 0.56,
+                      },
+                      itemStyle: { opacity: brand === "Trip.com" ? 1 : 0.62 },
+                      data: currentData,
+                    },
+                    {
+                      name: `${brand} 上一周期`,
+                      type: "line",
+                      smooth: true,
+                      showSymbol: false,
+                      lineStyle: {
+                        width: brand === "Trip.com" ? 2.2 : 1.6,
+                        type: "dashed",
+                        opacity: brand === "Trip.com" ? 0.62 : 0.3,
+                      },
+                      tooltip: { show: false },
+                      emphasis: { disabled: true },
+                      data: previousData,
+                    },
+                  ];
+                }),
+          });
+        try {
+          trendChart.setOption(trendOption, true);
+        } catch (error) {
+          console.error("[competitionTrend] setOption failed, fallback to basic chart:", error);
+          trendChart.setOption(
+            applyChartBase({
+              tooltip: { trigger: "axis" },
+              grid: { left: 54, right: 20, top: 48, bottom: 34 },
+              xAxis: { type: "category", data: dates },
+              yAxis: { type: "value" },
+              series: (state.compareOn ? brands : ["Trip.com"]).map((brand) => ({
+                name: brand,
+                type: "line",
+                smooth: true,
+                data: seriesByBrand[brand] || [],
+              })),
+            }),
+            true
+          );
+        }
+      }
+
+      if (chartTitle) {
+        chartTitle.textContent = metric.label;
+      }
+      if (rankTitle) {
+        rankTitle.textContent = `${metric.label}排名`;
+      }
+      if (rankMetricLabel) {
+        rankMetricLabel.textContent = `${metric.label} ↑`;
+      }
+
+      const rankingBrands = state.compareOn ? brands : ["Trip.com"];
+      const rows = rankingBrands
+        .map((brand) => {
+        const series = seriesByBrand[brand] || [];
+        const current = number(series[currentIndex]) || 0;
+        const previous = number(series[prevIndex]) || 0;
+        const delta = current - previous;
+        const isTrip = brand === "Trip.com";
+
+        const improved = metric.higherIsBetter ? delta > 0 : delta < 0;
+        const worsened = metric.higherIsBetter ? delta < 0 : delta > 0;
+        const trendClass = improved ? "up" : worsened ? "down" : "flat";
+
+        const formatByMetric = (value) => {
+          if (metric.format === "percent") return `${Number(value).toFixed(1)}%`;
+          if (metric.format === "rank") return `${Number(value).toFixed(1)} 名`;
+          return `${Math.round(Number(value))} 分`;
+        };
+
+        const deltaText =
+          metric.format === "percent"
+            ? `${delta >= 0 ? "+" : ""}${delta.toFixed(1)}%`
+            : metric.format === "rank"
+              ? `${delta >= 0 ? "+" : ""}${delta.toFixed(1)} 名`
+              : `${delta >= 0 ? "+" : ""}${Math.round(delta)} 分`;
+
+        return {
+          brand,
+          isTrip,
+          current,
+          deltaText,
+          trendArrow: improved ? "↑" : worsened ? "↓" : "—",
+          trendClass,
+          currentText: formatByMetric(current),
+          brandCell: `
+            <span class="brand-with-icon">
+              <span class="brand-icon ${brandMeta?.[brand]?.cls || ""}">${brandMeta?.[brand]?.short || "B"}</span>
+              <span>${brand}</span>
+              ${isTrip ? `<span class="brand-own-tag">拥有</span>` : ""}
+            </span>
+          `,
+        };
+      })
+      .sort((a, b) => (metric.higherIsBetter ? b.current - a.current : a.current - b.current))
+      .map((row, idx) => `
+          <tr class="${row.isTrip ? "is-trip" : ""}">
+            <td>${idx + 1}</td>
+            <td>${row.brandCell}</td>
+            <td>${row.currentText}</td>
+            <td class="trend-${row.trendClass}">${paid ? row.deltaText : row.trendArrow}</td>
+          </tr>
+        `);
+
+      if (tableBody) {
+        tableBody.innerHTML = rows.join("");
+      }
+
+      const competitors = brands.filter((brand) => brand !== "Trip.com");
+      const ranked = competitors
+        .map((brand) => ({
+          brand,
+          value: number(seriesByBrand[brand]?.[currentIndex]) || 0,
+        }))
+        .sort((a, b) =>
+          metric.higherIsBetter ? b.value - a.value : a.value - b.value
+        );
+      const topCompetitor = ranked[0] || { brand: "头部竞品", value: 0 };
+      const tripStart = number(seriesByBrand["Trip.com"]?.[0]) || 0;
+      const tripEnd = number(seriesByBrand["Trip.com"]?.[currentIndex]) || 0;
+      const changePct = trendChangeRate(tripStart, tripEnd);
+      const gapNow = topCompetitor.value - tripEnd;
+
+      const unitText =
+        metric.format === "percent" ? "个百分点" : metric.format === "rank" ? "名次" : "分";
+      const gapText =
+        metric.format === "percent"
+          ? `${gapNow >= 0 ? "" : "-"}${Math.abs(gapNow).toFixed(1)}`
+          : metric.format === "rank"
+            ? `${gapNow >= 0 ? "+" : ""}${gapNow.toFixed(1)}`
+            : `${gapNow >= 0 ? "+" : ""}${Math.round(gapNow)}`;
+
+      if (conclusion) {
+        if (!paid) {
+          conclusion.innerHTML =
+            "<p>订阅后，您可以查看 Trip.com 与竞品在最近 30/90 天内的趋势变化，判断自己是在追上，还是被甩开。</p>";
+        } else {
+          conclusion.innerHTML = `
+            <p>Trip.com 当前${metric.label}为 <strong>${
+              metric.format === "percent"
+                ? `${tripEnd.toFixed(1)}%`
+                : metric.format === "rank"
+                  ? `${tripEnd.toFixed(1)} 名`
+                  : `${Math.round(tripEnd)} 分`
+            }</strong>，较区间起点 ${
+              metric.format === "percent"
+                ? `${tripStart.toFixed(1)}%`
+                : metric.format === "rank"
+                  ? `${tripStart.toFixed(1)} 名`
+                  : `${Math.round(tripStart)} 分`
+            } 变化 ${changePct >= 0 ? "+" : ""}${changePct.toFixed(1)}%。</p>
+            <p>当前头部竞品为 ${topCompetitor.brand}，与 Trip.com 的差值约 <strong>${gapText} ${unitText}</strong>。</p>
+          `;
+        }
+      }
+    };
+
+    if (!paid) {
+      state.metric = "visibility";
+      state.showCurrent = true;
+      state.showPrevious = false;
+      state.compareOn = true;
+    }
+
+    if (metricSwitch) {
+      metricSwitch.addEventListener("click", (event) => {
+        const target = event.target.closest("[data-metric]");
+        if (!target || target.disabled) return;
+        state.metric = target.dataset.metric;
+        metricSwitch.querySelectorAll(".trend-chip").forEach((btn) => {
+          btn.classList.toggle("active", btn === target);
+        });
+        renderTable();
+      });
+    }
+
+    if (currentToggle) {
+      currentToggle.addEventListener("change", () => {
+        if (!paid) return;
+        state.showCurrent = currentToggle.checked;
+        if (!state.showCurrent && !state.showPrevious) {
+          state.showPrevious = true;
+          if (previousToggle) previousToggle.checked = true;
+        }
+        renderTable();
+      });
+    }
+
+    if (previousToggle) {
+      previousToggle.addEventListener("change", () => {
+        if (!paid) return;
+        state.showPrevious = previousToggle.checked;
+        if (!state.showCurrent && !state.showPrevious) {
+          state.showCurrent = true;
+          if (currentToggle) currentToggle.checked = true;
+        }
+        renderTable();
+      });
+    }
+
+    if (compareToggle) {
+      compareToggle.addEventListener("change", () => {
+        if (!paid) return;
+        state.compareOn = compareToggle.checked;
+        renderTable();
+      });
+    }
+
+    renderTable();
+  }
+
   function quadrantColor(quadrant) {
     if (quadrant === "core") return "#4caf50";
     if (quadrant === "gap") return "#f44336";
@@ -2094,7 +2814,7 @@
       <p class="topic-intro-line">${section.introText}</p>
       <div class="topic-intents-chart-row">
         <div class="chart-box topic-intents-chart-box">
-          <h3 class="chart-title">意图 × 可见度四象限（气泡大小 = 月对话量）</h3>
+          <h3 class="chart-title">意图 × 可见度四象限（气泡大小 = 对话量）</h3>
           <div class="chart-canvas" id="topicQuadrantChart"></div>
           <div class="topic-axis-note-row">
             <span>X轴：商业价值 / 转化意图（0–10，越往右越接近下单决策）</span>
@@ -2215,7 +2935,7 @@
             `类型说明：${intent.description}`,
             `你品牌可见度：${y}%`,
             `主要竞品可见度：${topCompetitorVisibility}%（${topCompetitors}）`,
-            `月对话量：${Number(volume).toLocaleString("en-US")} 次`,
+            `对话量：${Number(volume).toLocaleString("en-US")} 次`,
             `人话理解：每 10 次相关对话里，Trip.com 大约只出现 ${Math.max(
               Number(y / 10).toFixed(1),
               0
@@ -2326,7 +3046,7 @@
             <p class="topic-gap-line">你品牌可见度：<strong>${context.yourVisibility}%</strong></p>
             <p class="topic-gap-line">竞品平均可见度：<strong>${context.competitorAvgVisibility}%</strong>（${context.topCompetitors}）</p>
             <p class="topic-gap-line">情感得分：<strong>${context.sentimentScore}</strong>（${context.sentimentLabel}）</p>
-            <p class="topic-gap-line">月对话量：<strong>${context.monthlyChatVolume}</strong> 次</p>
+            <p class="topic-gap-line">对话量：<strong>${context.monthlyChatVolume}</strong> 次</p>
             <p class="topic-gap-loss">
               <span>【机会损失】</span>按当前对话量估算，每月约 ${context.opportunityLossMentions} 次推荐机会被主要竞品占据。
             </p>
@@ -2421,43 +3141,154 @@
 
     const normalized = {
       rootPrompt,
+      projectRegion: source.projectRegion || "us",
+      projectPlatforms: Array.isArray(source.projectPlatforms)
+        ? source.projectPlatforms
+        : ["ChatGPT", "Gemini", "Perplexity", "Claude"],
+      simulatedDialogs: Math.max(Math.round(number(source.simulatedDialogs) || 200), 0),
       intermediateTopics: [],
-      leafQueries: {},
-      statusPerLeaf: {},
-      metricsPerLeaf: {},
-      allLeaves: [],
+      promptsByTopic: {},
+      allPrompts: [],
+      allFanouts: [],
+    };
+
+    const buildFanouts = (promptRecord, rawFanouts) => {
+      const statusSequence = {
+        mentioned_and_cited: [
+          "mentioned_and_cited",
+          "mentioned_but_not_cited",
+          "not_mentioned",
+        ],
+        mentioned_but_not_cited: [
+          "mentioned_but_not_cited",
+          "not_mentioned",
+          "not_mentioned",
+        ],
+        not_mentioned: ["not_mentioned", "not_mentioned", "not_mentioned"],
+      };
+
+      const baseFrequency = Math.max(Math.round(number(promptRecord.frequency) || 0), 0);
+      const baseCrawlTimes = Math.max(Math.round(number(promptRecord.crawlTimes) || 0), 0);
+
+      if (Array.isArray(rawFanouts) && rawFanouts.length) {
+        return rawFanouts.map((fanout, index) => {
+          const fanoutStatus = normalizeQueryStatus(
+            fanout.status,
+            fanout.mentionStatus,
+            fanout.citationStatus
+          );
+          return {
+            fanoutText:
+              fanout.fanoutText ||
+              fanout.queryText ||
+              `${promptRecord.promptText} · fanout ${index + 1}`,
+            frequency: Math.max(
+              Math.round(number(fanout.frequency) || baseFrequency * (0.42 - index * 0.09)),
+              1
+            ),
+            statusKey: fanoutStatus,
+            mainCompetitors:
+              fanout.mainCompetitors ||
+              promptRecord.mainCompetitors ||
+              reportPrd.codingGuidelines.missingDataDisplay,
+            platforms:
+              Array.isArray(fanout.platforms) && fanout.platforms.length
+                ? fanout.platforms
+                : promptRecord.platforms,
+            crawlTimes: Math.max(
+              Math.round(number(fanout.crawlTimes) || baseCrawlTimes * (0.45 - index * 0.1)),
+              1
+            ),
+          };
+        });
+      }
+
+      const names = [
+        `${promptRecord.promptText} with reviews`,
+        `best ${promptRecord.promptText}`,
+        `${promptRecord.promptText} for 2026`,
+      ];
+      const ratios = [0.46, 0.32, 0.22];
+      const statuses = statusSequence[promptRecord.statusKey] || statusSequence.not_mentioned;
+
+      return names.map((fanoutText, index) => ({
+        fanoutText,
+        frequency: Math.max(Math.round(baseFrequency * ratios[index]), 1),
+        statusKey: statuses[index],
+        mainCompetitors:
+          promptRecord.mainCompetitors || reportPrd.codingGuidelines.missingDataDisplay,
+        platforms: promptRecord.platforms,
+        crawlTimes: Math.max(Math.round(baseCrawlTimes * ratios[index]), 1),
+      }));
+    };
+
+    const registerPrompt = (topic, promptText, recordMetrics = {}) => {
+      const frequency = Math.max(Math.round(number(recordMetrics.frequency) || 0), 0);
+      const statusKey = normalizeQueryStatus(
+        recordMetrics.status,
+        recordMetrics.mentionStatus,
+        recordMetrics.citationStatus
+      );
+      const promptRecord = {
+        topicName: topic,
+        promptText,
+        statusKey,
+        frequency,
+        mainCompetitors:
+          recordMetrics.mainCompetitors || reportPrd.codingGuidelines.missingDataDisplay,
+        platforms:
+          Array.isArray(recordMetrics.platforms) && recordMetrics.platforms.length
+            ? recordMetrics.platforms
+            : normalized.projectPlatforms
+                .slice(0, 1 + ((frequency % normalized.projectPlatforms.length) || 1))
+                .slice(0, 3),
+        crawlTimes: Math.max(
+          Math.round(number(recordMetrics.crawlTimes) || number(frequency) * 2.8 || 0),
+          0
+        ),
+      };
+
+      promptRecord.fanouts = buildFanouts(promptRecord, recordMetrics.fanouts).map((fanout) => ({
+        ...fanout,
+        topicName: topic,
+        promptText,
+      }));
+
+      if (!normalized.promptsByTopic[topic]) {
+        normalized.promptsByTopic[topic] = [];
+      }
+      normalized.promptsByTopic[topic].push(promptRecord);
+      normalized.allPrompts.push(promptRecord);
+      normalized.allFanouts.push(...promptRecord.fanouts);
     };
 
     if (hasExplicitShape) {
       normalized.intermediateTopics = explicitTopics;
+      normalized.intermediateTopics.forEach((topic) => {
+        normalized.promptsByTopic[topic] = [];
+      });
 
       explicitTopics.forEach((topic) => {
         const leaves = Array.isArray(source.leafQueries[topic])
           ? source.leafQueries[topic]
           : [];
-        normalized.leafQueries[topic] = leaves;
 
-        leaves.forEach((leafQuery) => {
-          const statusKey = normalizeQueryStatus(source.statusPerLeaf[leafQuery]);
-          const metrics = source.metricsPerLeaf?.[leafQuery] || {};
-          const frequency = Math.max(Math.round(number(metrics.frequency) || 0), 0);
-          const mainCompetitors = Array.isArray(metrics.mainCompetitors)
-            ? metrics.mainCompetitors.join("、")
-            : metrics.mainCompetitors || reportPrd.codingGuidelines.missingDataDisplay;
-          const topicName = metrics.topicName || topic;
-
-          normalized.statusPerLeaf[leafQuery] = statusKey;
-          normalized.metricsPerLeaf[leafQuery] = {
-            frequency,
-            mainCompetitors,
-            topicName,
-          };
-          normalized.allLeaves.push({
-            leafQuery,
-            topicName,
-            frequency,
-            mainCompetitors,
-            statusKey,
+        leaves.forEach((promptText) => {
+          const metrics = source.metricsPerLeaf?.[promptText] || {};
+          const statusKey = normalizeQueryStatus(
+            source.statusPerLeaf[promptText],
+            metrics.mentionStatus,
+            metrics.citationStatus
+          );
+          registerPrompt(topic, promptText, {
+            frequency: metrics.frequency,
+            status: statusKey,
+            mainCompetitors: Array.isArray(metrics.mainCompetitors)
+              ? metrics.mainCompetitors.join("、")
+              : metrics.mainCompetitors,
+            platforms: metrics.platforms,
+            crawlTimes: metrics.crawlTimes,
+            fanouts: metrics.fanouts,
           });
         });
       });
@@ -2467,36 +3298,27 @@
 
     const clusters = Array.isArray(source.clusters) ? source.clusters : [];
     normalized.intermediateTopics = clusters.map((cluster) => cluster.clusterName);
+    normalized.intermediateTopics.forEach((topic) => {
+      normalized.promptsByTopic[topic] = [];
+    });
 
     clusters.forEach((cluster) => {
       const topic = cluster.clusterName || "未命名主题";
       const queries = Array.isArray(cluster.queries) ? cluster.queries : [];
-      normalized.leafQueries[topic] = queries.map((query) => query.queryText);
 
       queries.forEach((query) => {
-        const leafQuery = query.queryText;
-        const frequency = Math.max(Math.round(number(query.frequency) || 0), 0);
         const statusKey = normalizeQueryStatus(
           null,
           query.mentionStatus,
           query.citationStatus
         );
-        const mainCompetitors =
-          query.mainRecommendedBrands || reportPrd.codingGuidelines.missingDataDisplay;
-        const topicName = query.topicName || topic;
-
-        normalized.statusPerLeaf[leafQuery] = statusKey;
-        normalized.metricsPerLeaf[leafQuery] = {
-          frequency,
-          mainCompetitors,
-          topicName,
-        };
-        normalized.allLeaves.push({
-          leafQuery,
-          topicName,
-          frequency,
-          mainCompetitors,
-          statusKey,
+        registerPrompt(topic, query.queryText, {
+          frequency: query.frequency,
+          status: statusKey,
+          mainCompetitors: query.mainRecommendedBrands,
+          platforms: query.platforms,
+          crawlTimes: query.crawlTimes,
+          fanouts: query.fanouts,
         });
       });
     });
@@ -2534,21 +3356,44 @@
     const section = reportPrd.sections.query_expansion;
     const container = document.getElementById("queryExpansion");
     const normalized = normalizeQueryExpansionData();
-    const top5 = normalized.allLeaves
+    const meta = reportData.reportMeta || {};
+    const projectBrand = meta.productName || "Trip.com";
+    const projectRegion = normalized.projectRegion || "us";
+    const platformSummary = (normalized.projectPlatforms || []).join(" / ");
+    const top5 = normalized.allFanouts
       .filter((item) => item.statusKey === "not_mentioned")
       .sort((a, b) => b.frequency - a.frequency)
       .slice(0, 5);
+    const topicSwitches = normalized.intermediateTopics || [];
+    const initialTopic = topicSwitches[0] || "";
 
     container.innerHTML = `
       ${sectionHeader("queryExpansion", section.title)}
       <p class="query-intro-line">${section.introText}</p>
       <div class="query-expansion-layout">
         <div class="chart-box query-tree-box">
-          <h3 class="chart-title query-chart-title">Prompt 扩展树（Tree / Fan-out）</h3>
+          <h3 class="chart-title query-chart-title">Topic → Prompt 扩展树（Tree / Fan-out）</h3>
+          <div class="query-topic-switch" id="queryTopicSwitch">
+            ${topicSwitches
+              .map(
+                (topic, index) => `
+              <button class="query-topic-chip ${index === 0 ? "active" : ""}" data-topic="${escapeHtml(
+                  topic
+                )}">
+                ${escapeHtml(topic)}
+              </button>
+            `
+              )
+              .join("")}
+          </div>
           <div class="query-tree-meta">
-            <div class="query-root-brief">
-              <p class="query-root-label">用户原始问题（核心 Prompt）</p>
-              <p class="query-root-value">${escapeHtml(normalized.rootPrompt)}</p>
+            <div class="query-project-meta">
+              <p class="query-project-title">项目元信息</p>
+              <div class="query-project-grid">
+                <p><strong>${escapeHtml(projectBrand)} · ${escapeHtml(projectRegion)}</strong></p>
+                <p><span>平台：</span><strong>${escapeHtml(platformSummary)}</strong></p>
+                <p><span>本轮模拟对话：</span><strong>${Number(normalized.simulatedDialogs).toLocaleString("en-US")} 次</strong></p>
+              </div>
             </div>
             <div class="query-status-legend">
               <span class="query-legend-item is-green"><i></i>出现且有引用</span>
@@ -2565,9 +3410,10 @@
             <table class="query-gap-table">
               <thead>
                 <tr>
-                  <th>扩展 Query 文本</th>
+                  <th>Fanout</th>
                   <th>所属 Topic</th>
-                  <th>频次</th>
+                  <th>所属 Prompt</th>
+                  <th>Fanout 次数</th>
                   <th>你品牌提及情况</th>
                   <th>当前主要被推荐的品牌</th>
                 </tr>
@@ -2581,23 +3427,19 @@
       <div class="query-transition-bar">${section.transitionText}</div>
     `;
 
-    const treeRoot = {
-      name: normalized.rootPrompt,
-      nodeType: "root",
-      symbol: "circle",
-      symbolSize: 14,
-      itemStyle: {
-        color: "#2a72d5",
-        borderColor: "#7ec0ff",
-        borderWidth: 2.4,
-      },
-      label: {
-        color: "#eef5ff",
-        fontWeight: 700,
-      },
-      children: normalized.intermediateTopics.map((topic) => ({
+    const treeChart = ensureChart("queryTreeChart", {});
+    const renderTree = (activeTopic) => {
+      const topic = activeTopic || initialTopic;
+      const selectedPrompts = normalized.promptsByTopic[topic] || [];
+      const uniquePlatforms = Array.from(
+        new Set(selectedPrompts.flatMap((prompt) => prompt.platforms || []))
+      );
+
+      const treeRoot = {
         name: topic,
         nodeType: "topic",
+        promptCount: selectedPrompts.length,
+        platformCount: uniquePlatforms.length,
         symbol: "circle",
         symbolSize: 11,
         itemStyle: {
@@ -2609,115 +3451,196 @@
           color: "#dbeaff",
           fontWeight: 600,
         },
-        children: (normalized.leafQueries[topic] || []).map((leafQuery) => {
-          const statusKey = normalized.statusPerLeaf[leafQuery];
-          const visual = queryStatusVisual(statusKey);
-          const metrics = normalized.metricsPerLeaf[leafQuery] || {};
-          const isGap = statusKey === "not_mentioned";
+        children: selectedPrompts.map((prompt) => {
+          const visual = queryStatusVisual(prompt.statusKey);
+          const isGapPrompt = prompt.statusKey === "not_mentioned";
           return {
-            name: leafQuery,
-            nodeType: "leaf",
-            statusKey,
+            name: prompt.promptText,
+            nodeType: "prompt",
             topicName: topic,
-            frequency: metrics.frequency,
-            mainCompetitors: metrics.mainCompetitors,
+            statusKey: prompt.statusKey,
+            frequency: prompt.frequency,
+            mainCompetitors: prompt.mainCompetitors,
+            platforms: prompt.platforms || [],
+            crawlTimes: prompt.crawlTimes || 0,
+            fanoutCount: (prompt.fanouts || []).length,
             symbol: "circle",
-            symbolSize: isGap ? 15 : 12,
+            symbolSize: isGapPrompt ? 13 : 11,
             itemStyle: {
               color: visual.fill,
               borderColor: visual.border,
               borderWidth: visual.borderWidth,
-              shadowBlur: isGap ? 10 : 0,
-              shadowColor: isGap ? "rgba(244, 67, 54, 0.4)" : "transparent",
             },
-            label: {
-              color: isGap ? "#ffd6d6" : "#eaf3ff",
-              fontWeight: isGap ? 700 : 500,
-            },
+            children: (prompt.fanouts || []).map((fanout) => {
+              const fanoutVisual = queryStatusVisual(fanout.statusKey);
+              const isGap = fanout.statusKey === "not_mentioned";
+              return {
+                name: fanout.fanoutText,
+                nodeType: "fanout",
+                topicName: fanout.topicName,
+                promptText: fanout.promptText,
+                statusKey: fanout.statusKey,
+                frequency: fanout.frequency,
+                mainCompetitors: fanout.mainCompetitors,
+                platforms: fanout.platforms || [],
+                crawlTimes: fanout.crawlTimes || 0,
+                symbol: "circle",
+                symbolSize: isGap ? 14 : 11,
+                itemStyle: {
+                  color: fanoutVisual.fill,
+                  borderColor: fanoutVisual.border,
+                  borderWidth: fanoutVisual.borderWidth,
+                  shadowBlur: isGap ? 10 : 0,
+                  shadowColor: isGap ? "rgba(244, 67, 54, 0.4)" : "transparent",
+                },
+                label: {
+                  color: isGap ? "#ffd6d6" : "#eaf3ff",
+                  fontWeight: isGap ? 700 : 500,
+                },
+              };
+            }),
           };
         }),
-      })),
-    };
+      };
 
-    const treeChart = ensureChart("queryTreeChart", {
-      tooltip: {
-        trigger: "item",
-        triggerOn: "mousemove",
-        formatter: (params) => {
-          const data = params.data || {};
-          if (data.nodeType !== "leaf") {
-            if (data.nodeType === "root") {
+      treeChart.setOption({
+        tooltip: {
+          trigger: "item",
+          triggerOn: "mousemove",
+          formatter: (params) => {
+            const data = params.data || {};
+            if (data.nodeType === "topic") {
               return [
-                `核心 Prompt：${escapeHtml(data.name)}`,
-                "层级：用户原始问题",
+                `Topic：${escapeHtml(data.name)}`,
+                `Prompt 数量：${data.promptCount || 0}`,
+                `涉及平台数：${data.platformCount || 0}`,
               ].join("<br/>");
             }
-            return [`主题簇：${escapeHtml(data.name)}`].join("<br/>");
-          }
+            if (data.nodeType === "prompt") {
+              return [
+                `Prompt：${escapeHtml(data.name)}`,
+                `所属 Topic：${escapeHtml(data.topicName || reportPrd.codingGuidelines.missingDataDisplay)}`,
+                `调用平台：${escapeHtml((data.platforms || []).join(" / ") || reportPrd.codingGuidelines.missingDataDisplay)}`,
+                `爬取次数：${Math.max(Math.round(number(data.crawlTimes) || 0), 0)}`,
+                `Fan out 数：${data.fanoutCount || 0}`,
+              ].join("<br/>");
+            }
 
-          const frequency = Math.max(Math.round(number(data.frequency) || 0), 0);
-          const frequencyText = frequency >= 1 ? `${frequency} 次` : "样本量较低";
-          const statusText = queryStatusText(data.statusKey);
-
-          return [
-            `扩展 Query：${escapeHtml(data.name)}`,
-            "",
-            `所属主题：${escapeHtml(data.topicName || reportPrd.codingGuidelines.missingDataDisplay)}`,
-            `月对话量：${frequencyText}`,
-            `你品牌状态：${statusText}`,
-            `当前主要被推荐的品牌：${escapeHtml(
-              data.mainCompetitors || reportPrd.codingGuidelines.missingDataDisplay
-            )}`,
-          ].join("<br/>");
+            const frequency = Math.max(Math.round(number(data.frequency) || 0), 0);
+            const statusText = queryStatusText(data.statusKey);
+            return [
+              `Fan out：${escapeHtml(data.name)}`,
+              `所属 Topic：${escapeHtml(data.topicName || reportPrd.codingGuidelines.missingDataDisplay)}`,
+              `所属 Prompt：${escapeHtml(data.promptText || reportPrd.codingGuidelines.missingDataDisplay)}`,
+              `调用平台：${escapeHtml((data.platforms || []).join(" / ") || reportPrd.codingGuidelines.missingDataDisplay)}`,
+              `Fan out 次数：${frequency}`,
+              `你品牌状态：${statusText}`,
+              `当前主要被推荐的品牌：${escapeHtml(
+                data.mainCompetitors || reportPrd.codingGuidelines.missingDataDisplay
+              )}`,
+            ].join("<br/>");
+          },
         },
-      },
-      series: [
-        {
-          type: "tree",
-          data: [treeRoot],
-          top: "8%",
-          left: "6%",
-          bottom: "8%",
-          right: "24%",
-          roam: true,
-          expandAndCollapse: false,
-          lineStyle: {
-            width: 1.3,
-            color: "rgba(178, 206, 241, 0.55)",
-          },
-          label: {
-            position: "left",
-            verticalAlign: "middle",
-            align: "right",
-            fontSize: 12,
-          },
-          leaves: {
-            label: {
-              position: "right",
-              align: "left",
-              fontSize: 12,
-              lineHeight: 16,
+        series: [
+          {
+            type: "tree",
+            data: [treeRoot],
+            top: "8%",
+            left: "2%",
+            bottom: "8%",
+            right: "20%",
+            roam: true,
+            expandAndCollapse: false,
+            lineStyle: {
+              width: 1.3,
+              color: "rgba(178, 206, 241, 0.55)",
             },
+            label: {
+              position: "left",
+              verticalAlign: "middle",
+              align: "right",
+              fontSize: 12,
+              formatter: (params) => {
+                const data = params.data || {};
+                if (data.nodeType === "topic") {
+                  return `{topic|Topic: ${data.name}}\n{meta|Prompt 数量：${
+                    data.promptCount || 0
+                  }}\n{meta|涉及平台数：${data.platformCount || 0}}`;
+                }
+                if (data.nodeType === "prompt") {
+                  return `{prompt|${data.name}}\n{meta|平台：${(data.platforms || []).join(" / ")}}\n{meta|爬取次数：${
+                    Math.max(Math.round(number(data.crawlTimes) || 0), 0)
+                  }}`;
+                }
+                return "";
+              },
+              rich: {
+                topic: {
+                  color: "#dbeaff",
+                  fontSize: 12,
+                  fontWeight: 700,
+                },
+                prompt: {
+                  color: "#eaf3ff",
+                  fontSize: 12,
+                  fontWeight: 600,
+                  lineHeight: 18,
+                },
+                meta: {
+                  color: "rgba(211, 227, 248, 0.78)",
+                  fontSize: 11,
+                  lineHeight: 16,
+                },
+              },
+            },
+            leaves: {
+              label: {
+                position: "right",
+                align: "left",
+                fontSize: 12,
+                lineHeight: 16,
+                formatter: (params) => {
+                  const data = params.data || {};
+                  return `{prompt|${data.name}}\n{meta|Fan out 次数：${
+                    Math.max(Math.round(number(data.frequency) || 0), 0)
+                  }}\n{meta|Prompt：${data.promptText || ""}}`;
+                },
+                rich: {
+                  prompt: {
+                    color: "#eaf3ff",
+                    fontSize: 12,
+                    fontWeight: 600,
+                    lineHeight: 18,
+                  },
+                  meta: {
+                    color: "rgba(208, 223, 243, 0.74)",
+                    fontSize: 11,
+                    lineHeight: 16,
+                  },
+                },
+              },
+            },
+            animationDuration: 450,
+            animationDurationUpdate: 650,
           },
-          animationDuration: 450,
-          animationDurationUpdate: 650,
-        },
-      ],
-    });
+        ],
+      });
+    };
 
     const queryTableBody = document.getElementById("queryTableBody");
     if (queryTableBody) {
       queryTableBody.innerHTML = top5
-        .map((queryItem) => {
+        .map((fanoutItem) => {
           return `
             <tr class="query-gap-row">
               <td>
-                <span class="query-text-main">${escapeHtml(queryItem.leafQuery)}</span>
+                <span class="query-text-main">${escapeHtml(fanoutItem.fanoutText)}</span>
               </td>
-              <td>${escapeHtml(queryItem.topicName)}</td>
-              <td>${queryItem.frequency}</td>
+              <td>${escapeHtml(fanoutItem.topicName)}</td>
+              <td>${escapeHtml(fanoutItem.promptText)}</td>
+              <td>${fanoutItem.frequency}</td>
               <td><span class="query-mention-none"><i></i>无</span></td>
-              <td>${escapeHtml(queryItem.mainCompetitors)}</td>
+              <td>${escapeHtml(fanoutItem.mainCompetitors)}</td>
             </tr>
           `;
         })
@@ -2732,7 +3655,7 @@
 
       if (!queryItem) {
         clickPain.innerHTML = `
-          <p class="query-click-pain-hint">点击树图中的红色节点，可查看该 Query 的实时缺口说明。</p>
+          <p class="query-click-pain-hint">点击树图中的红色 Fan out 节点，可查看该节点的缺口说明。</p>
         `;
         return;
       }
@@ -2744,13 +3667,35 @@
       `;
     };
 
-    renderClickPain(top5[0] || null);
+    renderTree(initialTopic);
+    renderClickPain(
+      top5[0]
+        ? {
+            leafQuery: top5[0].fanoutText,
+            mainCompetitors: top5[0].mainCompetitors,
+            frequency: top5[0].frequency,
+          }
+        : null
+    );
+
+    const switchWrap = document.getElementById("queryTopicSwitch");
+    if (switchWrap) {
+      switchWrap.querySelectorAll(".query-topic-chip").forEach((chip) => {
+        chip.addEventListener("click", () => {
+          const topic = chip.getAttribute("data-topic") || initialTopic;
+          switchWrap.querySelectorAll(".query-topic-chip").forEach((it) => {
+            it.classList.toggle("active", it === chip);
+          });
+          renderTree(topic);
+        });
+      });
+    }
 
     if (treeChart) {
       treeChart.off("click");
       treeChart.on("click", (params) => {
         const data = params.data || {};
-        if (data.nodeType !== "leaf" || data.statusKey !== "not_mentioned") {
+        if (data.nodeType !== "fanout" || data.statusKey !== "not_mentioned") {
           return;
         }
         renderClickPain({
@@ -3174,9 +4119,169 @@
     `;
   }
 
+  function renderSentimentTrend() {
+    const section = reportPrd.sections.sentiment_trend;
+    const container = document.getElementById("sentimentTrend");
+    if (!container) {
+      return;
+    }
+    const paid = isPaidVersion();
+    const trend = reportData.sentimentTrend || {};
+    const state = { range: 30 };
+
+    const renderPlaceholder = () => {
+      container.innerHTML = `
+        ${sectionHeader("sentimentTrend", section.title, section.description)}
+        <div class="trend-toolbar">
+          <div class="trend-control-group">
+            <span class="trend-control-label">时间范围</span>
+            <div class="trend-chip-row">
+              <button type="button" class="trend-chip locked active" disabled>30天</button>
+              <button type="button" class="trend-chip locked" disabled>90天</button>
+            </div>
+          </div>
+        </div>
+        <div class="sentiment-trend-placeholder">
+          <div class="sentiment-trend-placeholder-canvas"></div>
+          <p class="trend-lock-hint"><strong>售前预览：</strong>${section.lockHint}</p>
+        </div>
+      `;
+    };
+
+    if (!paid) {
+      renderPlaceholder();
+      return;
+    }
+
+    container.innerHTML = `
+      ${sectionHeader("sentimentTrend", section.title, section.description)}
+      <div class="trend-toolbar">
+        <div class="trend-control-group">
+          <span class="trend-control-label">时间范围</span>
+          <div class="trend-chip-row" id="sentimentTrendRangeSwitch">
+            <button type="button" class="trend-chip active" data-range="30">30天</button>
+            <button type="button" class="trend-chip" data-range="90">90天</button>
+          </div>
+        </div>
+      </div>
+      <div class="chart-box">
+        <h3 class="chart-title">情绪堆叠趋势 + 情感得分曲线</h3>
+        <div class="chart-canvas sentiment-trend-canvas" id="sentimentTrendChart"></div>
+      </div>
+      <div class="trend-conclusion-box" id="sentimentTrendConclusion"></div>
+    `;
+
+    const trendChart = ensureChart("sentimentTrendChart", {
+      xAxis: { type: "category", data: [] },
+      yAxis: { type: "value" },
+      series: [],
+    });
+
+    const update = () => {
+      const dates = trend.dates || [];
+      const start = calcWindowStart(dates.length, state.range);
+      const viewDates = dates.slice(start);
+      const positive = (trend.positiveRate || []).slice(start);
+      const neutral = (trend.neutralRate || []).slice(start);
+      const negative = (trend.negativeRate || []).slice(start);
+      const score = (trend.overallScore || []).slice(start);
+
+      if (trendChart) {
+        trendChart.setOption(
+          applyChartBase({
+            legend: { top: 8 },
+            tooltip: {
+              trigger: "axis",
+              valueFormatter: (value) =>
+                value === null || value === undefined ? "—" : `${Number(value).toFixed(1)}%`,
+            },
+            grid: { left: 52, right: 26, top: 46, bottom: 36 },
+            xAxis: { type: "category", data: viewDates, axisLabel: { formatter: (v) => String(v).slice(5) } },
+            yAxis: [
+              { type: "value", max: 100, axisLabel: { formatter: "{value}%" } },
+              { type: "value", min: 0, max: 100, axisLabel: { formatter: "{value}" } },
+            ],
+            series: [
+              {
+                name: "正面",
+                type: "line",
+                stack: "sentiment",
+                smooth: true,
+                areaStyle: { opacity: 0.4 },
+                lineStyle: { width: 1.8 },
+                data: positive,
+                color: "#2a72d5",
+              },
+              {
+                name: "中性",
+                type: "line",
+                stack: "sentiment",
+                smooth: true,
+                areaStyle: { opacity: 0.4 },
+                lineStyle: { width: 1.8 },
+                data: neutral,
+                color: "#ff9800",
+              },
+              {
+                name: "负面",
+                type: "line",
+                stack: "sentiment",
+                smooth: true,
+                areaStyle: { opacity: 0.4 },
+                lineStyle: { width: 1.8 },
+                data: negative,
+                color: "#4caf50",
+              },
+              {
+                name: "情感得分",
+                type: "line",
+                yAxisIndex: 1,
+                smooth: true,
+                symbolSize: 6,
+                lineStyle: { width: 2.6 },
+                data: score,
+                color: "#6a4bc7",
+              },
+            ],
+          }),
+          true
+        );
+      }
+
+      const scoreStart = number(score[0]) || 0;
+      const scoreEnd = number(score[score.length - 1]) || 0;
+      const scoreDiff = scoreEnd - scoreStart;
+      const positiveDiff = (number(positive[positive.length - 1]) || 0) - (number(positive[0]) || 0);
+
+      document.getElementById(
+        "sentimentTrendConclusion"
+      ).innerHTML = `<p>近 ${state.range} 天整体情感得分从 ${scoreStart.toFixed(
+        1
+      )} 提升到 ${scoreEnd.toFixed(1)}（${scoreDiff >= 0 ? "+" : ""}${scoreDiff.toFixed(
+        1
+      )}），正面提及占比变化 ${positiveDiff >= 0 ? "+" : ""}${positiveDiff.toFixed(1)} 个百分点。</p>`;
+    };
+
+    const rangeSwitch = container.querySelector("#sentimentTrendRangeSwitch");
+    if (rangeSwitch) {
+      rangeSwitch.addEventListener("click", (event) => {
+        const target = event.target.closest("[data-range]");
+        if (!target) return;
+        state.range = Number(target.dataset.range) || 30;
+        rangeSwitch.querySelectorAll(".trend-chip").forEach((btn) => {
+          btn.classList.toggle("active", btn === target);
+        });
+        update();
+      });
+    }
+
+    update();
+  }
+
   function renderOpportunitiesSummary() {
     const section = reportPrd.sections.opportunities_summary;
     const container = document.getElementById("opportunitiesSummary");
+    const paid = isPaidVersion();
     const matrix = reportData.opportunities.matrix;
     const matrixItems = (matrix.items || []).slice();
     const maxLoss = Math.max(...matrixItems.map((item) => number(item.estimatedLoss) || 0), 1);
@@ -3187,6 +4292,17 @@
       .map((item, index) => ({ ...item, rank: index + 1 }));
 
     const supportCards = reportData.opportunities.generalSuggestions || [];
+    const trendData = reportData.opportunityTrend || { weeks: [], scenarios: [] };
+    const weeks = trendData.weeks || [];
+    const latestWeekIndex = Math.max(weeks.length - 1, 0);
+    const topTrendScenarios = (trendData.scenarios || [])
+      .slice()
+      .sort((a, b) => {
+        const aLoss = number(a.estimatedLoss?.[latestWeekIndex]) || 0;
+        const bLoss = number(b.estimatedLoss?.[latestWeekIndex]) || 0;
+        return bLoss - aLoss;
+      })
+      .slice(0, 5);
 
     container.innerHTML = `
       ${sectionHeader("opportunitiesSummary", section.title, section.description)}
@@ -3208,8 +4324,24 @@
       <h3 class="opportunity-subtitle">${section.cardsTitle}</h3>
       <div class="opportunity-card-grid" id="opportunityCards"></div>
 
-      <h3 class="opportunity-subtitle">${section.supportTitle}</h3>
-      <div class="opportunity-support-grid" id="opportunitySupports"></div>
+      <div class="opportunity-trend-block">
+        <h3 class="opportunity-subtitle">${section.trendTitle}</h3>
+        <p class="opportunity-trend-hint ${paid ? "" : "locked"}">${
+          paid ? "按天看清 Topic 机会流失是否收窄，验证 GEO 优化是否真正把机会从竞品手里抢回来。" : section.trendHint
+        }</p>
+        <div class="opportunity-trend-grid">
+          <div class="chart-box opportunity-trend-chart-box ${paid ? "" : "locked-preview"}">
+            <h4 class="chart-title chart-title-small">${section.trendChartTitle}</h4>
+            <div class="opportunity-premium-inline">
+              <span class="opportunity-premium-tag">增值能力（可选）</span>
+              <span class="opportunity-premium-text">解锁完整周期流失波动、异常周预警与自动解读</span>
+            </div>
+            <div class="chart-canvas opportunity-trend-canvas" id="opportunityTrendScoreChart"></div>
+          </div>
+        </div>
+        <div class="trend-conclusion-box opportunity-trend-conclusion" id="opportunityTrendConclusion"></div>
+      </div>
+
     `;
 
     const shortScene = (scene) =>
@@ -3369,19 +4501,123 @@
       `)
       .join("");
 
-    document.getElementById("opportunitySupports").innerHTML = supportCards
-      .map(
-        (item, index) => `
-          <article class="support-card">
-            <span class="support-icon">${String(index + 1).padStart(2, "0")}</span>
-            <div>
-              <h4>${item.title}</h4>
-              <p>${item.content}</p>
-            </div>
-          </article>
-        `
-      )
-      .join("");
+    const trendChart = ensureChart("opportunityTrendScoreChart", {
+      xAxis: { type: "category", data: [] },
+      yAxis: { type: "value" },
+      series: [],
+    });
+
+    const previewCutIndex = Math.max(weeks.length - 2, 0);
+
+    if (trendChart && weeks.length > 0) {
+      const trendOption = applyChartBase({
+          legend: { show: false },
+          tooltip: {
+            trigger: "axis",
+            formatter: (params) => {
+              const rows = params
+                .map((item) => {
+                  const scenario = topTrendScenarios.find((entry) => entry.scenarioName === item.seriesName);
+                  const pointIndex = item.dataIndex;
+                  const loss = number(scenario?.estimatedLoss?.[pointIndex]) || 0;
+                  const rawLoss = item.data;
+                  if (rawLoss === null || rawLoss === undefined || Number.isNaN(rawLoss)) {
+                    return "";
+                  }
+                  return `${item.marker}${item.seriesName}：当天机会流失 ${Math.round(loss)} 次`;
+                })
+                .filter(Boolean);
+              return [`日期：${params[0]?.axisValue || ""}`, ...rows].join("<br/>");
+            },
+          },
+          grid: { left: 48, right: 18, top: 48, bottom: 34 },
+          xAxis: {
+            type: "category",
+            data: weeks,
+            axisLabel: {
+              formatter: (value) => String(value).slice(5),
+            },
+          },
+          yAxis: { type: "value", axisLabel: { formatter: "{value} 次" } },
+          series: topTrendScenarios.slice(0, 4).map((scenario, index) => ({
+            name: scenario.scenarioName,
+            type: "line",
+            smooth: true,
+            symbolSize: 6,
+            lineStyle: { width: index === 0 ? 3 : 2, opacity: index === 0 ? 1 : 0.75 },
+            data: (scenario.estimatedLoss || []).map((value, idx) =>
+              paid || idx >= previewCutIndex ? Number(value) : null
+            ),
+            markArea:
+              !paid && index === 0 && previewCutIndex > 0
+                ? {
+                    silent: true,
+                    itemStyle: { color: "rgba(130, 146, 166, 0.22)" },
+                    data: [[{ xAxis: weeks[0] }, { xAxis: weeks[previewCutIndex - 1] }]],
+                  }
+                : undefined,
+          })),
+        });
+      try {
+        trendChart.setOption(trendOption, true);
+      } catch (error) {
+        console.error("[opportunityTrend] setOption failed, fallback to basic chart:", error);
+        trendChart.setOption(
+          applyChartBase({
+            tooltip: { trigger: "axis" },
+            grid: { left: 48, right: 18, top: 48, bottom: 34 },
+            xAxis: {
+              type: "category",
+              data: weeks,
+              axisLabel: {
+                formatter: (value) => String(value).slice(5),
+              },
+            },
+            yAxis: { type: "value", axisLabel: { formatter: "{value} 次" } },
+            series: topTrendScenarios.slice(0, 4).map((scenario) => ({
+              name: scenario.scenarioName,
+              type: "line",
+              smooth: true,
+              data: (scenario.estimatedLoss || []).map((value, idx) =>
+                paid || idx >= previewCutIndex ? Number(value) : null
+              ),
+            })),
+          }),
+          true
+        );
+      }
+    }
+
+    const trendConclusion = document.getElementById("opportunityTrendConclusion");
+    if (trendConclusion) {
+      if (!paid) {
+        const topScenario = topTrendScenarios[0];
+        const topLoss = number(topScenario?.estimatedLoss?.[latestWeekIndex]) || 0;
+        trendConclusion.innerHTML = `
+          <p class="trend-conclusion-title">机会流失说明（预览）</p>
+          <p>“机会流失”指在某个 Topic 下，本应出现 Trip.com 的推荐机会没有出现，被竞品拿走的次数。当前最高流失场景为「${
+            topScenario?.scenarioName || "N/A"
+          }」，在最新一天约错过 ${Math.round(topLoss)} 次提及机会。</p>
+          <p>${section.trendHint}</p>
+        `;
+      } else {
+        const lines = topTrendScenarios.slice(0, 2).map((scenario) => {
+          const losses = scenario.estimatedLoss || [];
+          const startLoss = number(losses[0]) || 0;
+          const endLoss = number(losses[losses.length - 1]) || 0;
+          const lossChange = trendChangeRate(startLoss, endLoss);
+          return `「${scenario.scenarioName}」机会损失从 ${Math.round(startLoss)} 次变为 ${Math.round(
+            endLoss
+          )} 次（${lossChange >= 0 ? "+" : ""}${lossChange.toFixed(1)}%）。`;
+        });
+        trendConclusion.innerHTML = `
+          <p class="trend-conclusion-title">${section.trendConclusionTitle}</p>
+          <p>“机会流失”指在对应 Topic 下，Trip.com 没被提及、而机会被竞品拿走的次数。</p>
+          ${lines.map((line) => `<p>${line}</p>`).join("")}
+        `;
+      }
+    }
+
   }
 
   function renderSubscriptionCta() {
@@ -3482,6 +4718,7 @@
     renderNav();
     renderBrandOverview();
     renderBrandCompetition();
+    renderCompetitionTrend();
     renderTopicIntents();
     renderQueryExpansion();
     renderPlatformDiff();
